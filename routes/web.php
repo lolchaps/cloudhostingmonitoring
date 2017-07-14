@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 // No auth middleware yet
-Route::get('/admin', 'HomeController@index')->name('admin');
+Route::middleware(['auth'])->group(function () {
+	Route::get('/admin', 'HomeController@index')->name('admin');
 
-Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
+	Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
+});
