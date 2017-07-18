@@ -8,21 +8,21 @@
                 <tbody>
                     <tr>
                         <th>Client Name</th>
-                        <td>John</td>
+                        <td></td>
                         <td></td>
                         <th>Project:</th>
-                        <td>Website Design</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                     </tr>
 
                     <tr>
-                        <th>(5) Other Projects</th>
+                        <th>(0) Other Projects</th>
                         <td></td>
                         <td></td>
                         <th>Status:</th>
-                        <td>on hold, waiting on content</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>

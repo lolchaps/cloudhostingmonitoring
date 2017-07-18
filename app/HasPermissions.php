@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Permission;
+
 trait HasPermissions
 {
 	/**

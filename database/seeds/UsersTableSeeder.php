@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
         ]);
 
         $company = $companyCategory->company()->create([
-            'name' => 'Horizon IT Solutions',
+            'name' => 'GO Cloud Solutions',
             'address' => 'address',
             'town' => 'town',
             'city' => 'city',
@@ -39,13 +39,13 @@ class UsersTableSeeder extends Seeder
 
         $department = $company->department()->create([
             'description' => 'Sales',
-            'email' => 'john@hits.ie',
+            'email' => 'john@gocloud.ie',
         ]);
 
         $user = $department->users()->create([
             'name' => 'John',
             'surname' => 'Cotter',
-            'email' => 'john@hits.ie',
+            'email' => 'john@gocloud.ie',
             'mobile' => '876629308',
             'username' => 'jcotter',
             'password' => $password = bcrypt('123456'),

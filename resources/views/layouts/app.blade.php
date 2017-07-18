@@ -42,7 +42,7 @@
                             @can('admin')
                                 <li><a href="{{ route('admin') }}">Admin</a></li>
                             @endcan
-                                <li><a href="#">My Account</a></li>
+                                <li><a href="{{ route('my-account') }}">My Account</a></li>
                                 <li><a href="#">Projects</a></li>
                                 <li><a href="#">Monitoring</a></li>
                                 <li><a href="#">Knowledgebase</a></li>

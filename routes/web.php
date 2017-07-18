@@ -21,5 +21,7 @@ Auth::routes();
 Route::middleware(['auth'])->group(function () {
 	Route::get('/admin', 'HomeController@index')->name('admin');
 
-	Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
+	Route::get('my-account', 'MyAccountController@show')->name('my-account');
+
+	Route::resource('users', 'UsersController');
 });

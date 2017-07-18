@@ -8,21 +8,21 @@
                 <tbody>
                     <tr>
                         <th>Client Name</th>
-                        <td>John</td>
+                        <td></td>
                         <td></td>
                         <th>Project:</th>
-                        <td>Website Design</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                     </tr>
 
                     <tr>
-                        <th>(5) Other Projects</th>
+                        <th>(0) Other Projects</th>
                         <td></td>
                         <td></td>
                         <th>Status:</th>
-                        <td>on hold, waiting on content</td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -43,6 +43,10 @@
         </div>
 
         <div class="col-md-12">
+            <div class="m-b-5">
+                <a href="{{ route('users.create') }}" class="btn btn-default btn-sm">Add User</a>    
+            </div>
+
             <table class="table table-bordered">
                 <thead>
                     <tr>
