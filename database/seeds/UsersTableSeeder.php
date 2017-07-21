@@ -21,6 +21,36 @@ class UsersTableSeeder extends Seeder
             'label' => 'Reports',
         ]);
 
+        App\Permission::create([
+            'name' => 'projects', 
+            'label' => 'Projects',
+        ]);
+
+        App\Permission::create([
+            'name' => 'monitoring', 
+            'label' => 'Monitoring',
+        ]);
+
+        App\Permission::create([
+            'name' => 'knowledgebase', 
+            'label' => 'Knowledgebase',
+        ]);
+
+        App\Permission::create([
+            'name' => 'password_manager', 
+            'label' => 'Password Manager',
+        ]);
+
+        App\Permission::create([
+            'name' => 'purchases', 
+            'label' => 'Purchases',
+        ]);
+
+        App\Permission::create([
+            'name' => 'tickets', 
+            'label' => 'Tickets',
+        ]);
+
         $companyCategory = App\CompanyCategory::create([
 	    	'name' => 'customer',
         	'label' => 'Customer',
@@ -58,6 +88,6 @@ class UsersTableSeeder extends Seeder
             'mobile_id' => 'ER42455634ERDSE',
         ]);
 
-        $user->permissions()->attach([1, 2]);
+        $user->permissions()->attach([1, 2, 3, 4, 5, 6, 7, 8]);
     }
 }

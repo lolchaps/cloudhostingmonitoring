@@ -49,13 +49,31 @@
                             @can('admin')
                                 <li><a href="{{ route('admin') }}">Admin</a></li>
                             @endcan
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Monitoring</a></li>
-                                <li><a href="#">Knowledgebase</a></li>
-                                <li><a href="#">Password Manager</a></li>
-                                <li><a href="#">Purchases</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Tickets</a></li>
+
+                            @can('projects')
+                                <li><a href="{{ route('projects') }}">Projects</a></li>
+                            @endcan
+
+                            @can('monitoring')
+                                <li><a href="{{ route('monitoring') }}">Monitoring</a></li>
+                            @endcan
+
+                            @can('knowledgebase')
+                                <li><a href="{{ route('knowledgebase') }}">Knowledgebase</a></li>
+                            @endcan
+
+                            @can('password_manager')
+                                <li><a href="{{ route('password_manager') }}">Password Manager</a></li>
+                            @endcan
+                            
+                            @can('purchases')
+                                <li><a href="{{ route('purchases') }}">Purchases</a></li>
+                            @endcan
+
+                            @can('tickets')
+                                <li><a href="{{ route('tickets') }}">Tickets</a></li>
+                            @endcan
+
                             @can('reports')
                                 <li><a href="{{ route('reports.index') }}">Reports</a></li>
                             @endcan

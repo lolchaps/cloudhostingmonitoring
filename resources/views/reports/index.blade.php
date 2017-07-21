@@ -43,6 +43,8 @@
         </div>
 
         <div class="col-md-12">
+            <h3>Reports</h3>
+            
             <table class="table table-bordered table-condensed">
                 <thead>
                     <tr>

@@ -41,6 +41,10 @@
                 </tbody>
             </table>
         </div>
+    </div>
+    
+    <h3>My Account</h3>
+    <div class="row">
 
         <div class="col-md-6">
             <form action="{{ route('my-account.update') }}" method="POST">

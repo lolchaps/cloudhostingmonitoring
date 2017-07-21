@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Edit User: {{ $user->name }}</div>
                 <div class="panel-body">
@@ -207,8 +207,7 @@
         $('#company').select2();
         $('#department').select2();
         $('#permissions').select2({
-            placeholder: "Select a permissions",
-            allowClear: true
+            placeholder: "Select a permissions"
         });
     </script>
 @endpush

@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -29,3 +18,33 @@ Route::middleware(['auth'])->group(function () {
 
 	Route::resource('/users', 'UsersController');
 });
+
+// Dummy view
+Route::middleware(['auth'])->group(function () {
+
+	Route::get('/projects', function () {
+		return view('projects.index');
+	})->name('projects')->middleware('can:projects');
+
+	Route::get('/monitoring', function () {
+		return view('monitoring.index');
+	})->name('monitoring')->middleware('can:monitoring');
+
+	Route::get('/knowledgebase', function () {
+		return view('knowledgebase.index');
+	})->name('knowledgebase')->middleware('can:knowledgebase');
+
+	Route::get('/password-manager', function () {
+		return view('password-manager.index');
+	})->name('password_manager')->middleware('can:password_manager');
+
+	Route::get('/purchases', function () {
+		return view('purchases.index');
+	})->name('purchases')->middleware('can:purchases');
+
+	Route::get('/tickets', function () {
+		return view('tickets.index');
+	})->name('tickets')->middleware('can:tickets');
+
+});
+//

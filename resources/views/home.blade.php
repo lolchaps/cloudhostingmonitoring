@@ -41,6 +41,10 @@
                 </tbody>
             </table>
         </div>
+
+        <div class="col-md-12">
+            <h3>Home</h3>
+        </div>
     </div>
 </div>
 @endsection

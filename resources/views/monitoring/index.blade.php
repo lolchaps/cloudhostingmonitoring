@@ -43,37 +43,7 @@
         </div>
 
         <div class="col-md-12">
-            <h3>Admin</h3>
-            
-            <div class="m-b-5">
-                <a href="{{ route('users.create') }}" class="btn btn-default btn-sm">Add User</a>    
-            </div>
-
-            <table class="table table-bordered table-condensed">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Company</th>
-                        <th>Last Login</th>
-                        <th>Edit</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @foreach ($users as $user)
-                        <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td>{{ $user->department->company->name }}</td>
-                            <td></td>
-                            <td>
-                                <a href="{{ route('users.edit', $user) }}" class="btn btn-default btn-xs">Edit</a>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            <h3>Monitoring</h3>
         </div>
     </div>
 </div>
