@@ -70,7 +70,7 @@
                             <label for="company" class="col-md-4 control-label">Company</label>
 
                             <div class="col-md-6">
-                                <select name="company" class="form-control input-sm">
+                                <select name="company" id="company" class="form-control input-sm">
                                     @foreach ($companies as $key => $company)
                                         <option value="{{ $key }}">{{ $company }}</option>
                                     @endforeach
@@ -88,7 +88,7 @@
                             <label for="department" class="col-md-4 control-label">Department</label>
 
                             <div class="col-md-6">
-                                <select name="department" class="form-control input-sm">
+                                <select name="department" id="department" class="form-control input-sm">
                                     @foreach ($departments as $key => $department)
                                         <option value="{{ $key }}">{{ $department }}</option>
                                     @endforeach
@@ -170,7 +170,7 @@
                             <label for="permissions" class="col-md-4 control-label">Permissions</label>
 
                             <div class="col-md-6">
-                                <select name="permissions[]" class="form-control input-sm">
+                                <select name="permissions[]" id="permissions" class="form-control input-sm" multiple="multiple">
                                     @foreach ($permissions as $key => $permission)
                                         <option value="{{ $key }}">{{ $permission }}</option>
                                     @endforeach
@@ -198,3 +198,14 @@
     </div>
 </div>
 @endsection
+
+@push('scripts')
+    <script type="text/javascript">
+        $('#company').select2();
+        $('#department').select2();
+        $('#permissions').select2({
+            placeholder: "Select a permissions",
+            allowClear: true
+        });
+    </script>
+@endpush

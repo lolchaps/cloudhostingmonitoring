@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-condensed">
                 <tbody>
                     <tr>
                         <th>Client Name</th>
@@ -47,7 +47,7 @@
                 <a href="{{ route('users.create') }}" class="btn btn-default btn-sm">Add User</a>    
             </div>
 
-            <table class="table table-bordered">
+            <table class="table table-bordered table-condensed">
                 <thead>
                     <tr>
                         <th>ID</th>

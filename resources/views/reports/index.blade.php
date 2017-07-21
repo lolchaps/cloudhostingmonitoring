@@ -46,26 +46,26 @@
             <table class="table table-bordered table-condensed">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Company</th>
-                        <th>Last Login</th>
-                        <th>Edit</th>
+                        <th>From Address</th>
+                        <th>Server IP</th>
+                        <th>Server Hostname</th>
+                        <th>Subject</th>
+                        <th>Email Header</th>
+                        <th>Email Body</th>
+                        <th>Complete Email</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    @foreach ($users as $user)
-                        <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->name }}</td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <a href="{{ route('users.edit', $user) }}" class="btn btn-default btn-xs">Edit</a>
-                            </td>
-                        </tr>
-                    @endforeach
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
                 </tbody>
             </table>
         </div>

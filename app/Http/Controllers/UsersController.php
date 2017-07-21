@@ -75,6 +75,8 @@ class UsersController extends Controller
 
         $user->permissions()->sync($request->permissions);
 
+        flash('User successfully added!', 'success');
+
         return redirect()->route('admin');
     }
 
@@ -125,7 +127,6 @@ class UsersController extends Controller
             'surname' => 'required|string|max:255',
             'mobile_no' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
-            'name' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users,username,'.$user->id,
             'signature' => 'required|string|max:255',
             'mobile_id' => 'required|string|max:255',
@@ -143,6 +144,8 @@ class UsersController extends Controller
         ]);
 
         $user->permissions()->sync($request->permissions);
+
+        flash('User successfully updated!', 'success');
 
         return redirect()->route('admin');
     }

@@ -12,6 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Select2 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <!-- Toastr -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
 </head>
 <body>
     <div id="app">
@@ -42,7 +47,6 @@
                             @can('admin')
                                 <li><a href="{{ route('admin') }}">Admin</a></li>
                             @endcan
-                                <li><a href="{{ route('my-account') }}">My Account</a></li>
                                 <li><a href="#">Projects</a></li>
                                 <li><a href="#">Monitoring</a></li>
                                 <li><a href="#">Knowledgebase</a></li>
@@ -50,7 +54,9 @@
                                 <li><a href="#">Purchases</a></li>
                                 <li><a href="#">Projects</a></li>
                                 <li><a href="#">Tickets</a></li>
-                                <li><a href="#">Reports</a></li>
+                            @can('reports')
+                                <li><a href="{{ route('reports.index') }}">Reports</a></li>
+                            @endcan
                         @endif
                     </ul>
 
@@ -66,6 +72,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{ route('my-account') }}">My Account</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
@@ -90,5 +97,14 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <!-- Select2 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <!-- Toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    @include('flash.toastr')
+    
+    @stack('scripts')
 </body>
 </html>

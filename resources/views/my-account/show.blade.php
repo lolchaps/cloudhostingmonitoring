@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-bordered">
+            <table class="table table-bordered table-condensed">
                 <tbody>
                     <tr>
                         <th>Client Name</th>
@@ -43,90 +43,87 @@
         </div>
 
         <div class="col-md-6">
-            <form>
-                <table class="table table-bordered">
+            <form action="{{ route('my-account.update') }}" method="POST">
+                {{ csrf_field() }}
+                {{ method_field('PATCH') }}
+
+                <table class="table table-bordered table-condensed">
                     <tbody>
                         <tr>
                             <th>Name</th>
                             <td>
-                                {{ $user->name }}
-                                {{-- <input type="tex" name="name" value="{{ $user->name }}" class="form-control input-sm"> --}}
+                                <input type="tex" name="name" value="{{ $user->name }}" class="form-control input-sm">
                             </td>
                         </tr>
 
                         <tr>
                             <th>Surname</th>
                             <td>
-                                {{ $user->surname }}
-                                {{-- <input type="text" name="surname" value="{{ $user->surname }}" class="form-control input-sm"> --}}
+                                <input type="text" name="surname" value="{{ $user->surname }}" class="form-control input-sm">
                             </td>
                         </tr>
 
                         <tr>
                             <th>Email</th>
                             <td>
-                                {{ $user->email }}
-                                {{-- <input type="email" name="email" value="{{ $user->email }}" class="form-control input-sm"> --}}
+                                <input type="email" name="email" value="{{ $user->email }}" class="form-control input-sm">
                             </td>
                         </tr>
 
                         <tr>
                             <th>Username</th>
                             <td>
-                                {{ $user->username }}
-                                {{-- <input type="text" name="username" value="{{ $user->username }}" class="form-control input-sm"> --}}
+                                <input type="text" name="username" value="{{ $user->username }}" class="form-control input-sm">
                             </td>
                         </tr>
 
                         <tr>
                             <th>Password</th>
                             <td>
-                                {{ str_limit($user->password, 15) }}
-                                {{-- <input type="password" name="password" value="{{ $user->password }}" class="form-control input-sm"> --}}
+                                <input type="password" name="password" value="{{ $user->password }}" class="form-control input-sm">
                             </td>
                         </tr>
 
                         <tr>
                             <th>Company</th>
                             <td>
-                                {{ $user->department->company->name }}
-                                {{-- <input type="text" name="company" value="{{ $user->department->company->name }}" class="form-control input-sm"> --}}
+                                <input type="text" name="company" value="{{ $user->department->company->name }}" class="form-control input-sm" disabled>
                             </td>
                         </tr>
 
                         <tr>
                             <th>Department</th>
                             <td>
-                                {{ $user->department->description }}
-                                {{-- <input type="text" name="department" value="{{ $user->department->description }}" class="form-control input-sm"> --}}
+                                <input type="text" name="department" value="{{ $user->department->description }}" class="form-control input-sm" disabled>
                             </td>
                         </tr>
 
                         <tr>
                             <th>Mobile</th>
                             <td>
-                                {{ $user->mobile }}
-                                {{-- <input type="text" name="mobile" value="{{ $user->mobile }}" class="form-control input-sm"> --}}
+                                <input type="text" name="mobile_no" value="{{ $user->mobile }}" class="form-control input-sm">
                             </td>
                         </tr>
 
                         <tr>
                             <th>Signature</th>
                             <td>
-                                {{ $user->signature }}
-                                {{-- <input type="text" name="signature" value="{{ $user->signature }}" class="form-control input-sm"> --}}
+                                <input type="text" name="signature" value="{{ $user->signature }}" class="form-control input-sm">
                             </td>
                         </tr>
 
                         <tr>
                             <th>MobileID</th>
                             <td>
-                                {{ $user->mobile_id }}
-                                {{-- <input type="text" name="mobile_id" value="{{ $user->mobile_id }}" class="form-control input-sm"> --}}
+                                <input type="text" name="mobile_id" value="{{ $user->mobile_id }}" class="form-control input-sm">
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                <button type="submit" class="btn btn-primary btn-sm">Update Info</button>
+                @foreach ($errors->all() as $message)
+                    {{ $message }}
+                @endforeach
             </form>
         </div>
 

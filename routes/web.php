@@ -18,9 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
+	Route::get('/reports', 'ReportsController@index')->name('reports.index');
+
 	Route::get('/admin', 'HomeController@index')->name('admin');
 
-	Route::get('my-account', 'MyAccountController@show')->name('my-account');
+	Route::get('/my-account', 'MyAccountController@show')->name('my-account');
+	Route::patch('/my-account', 'MyAccountController@update')->name('my-account.update');
 
-	Route::resource('users', 'UsersController');
+	Route::resource('/users', 'UsersController');
 });

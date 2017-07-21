@@ -11,9 +11,14 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-	    $permission = App\Permission::create([
-	    	'name' => 'admin',
-        	'label' => 'Admin',
+	    App\Permission::create([
+            'name' => 'admin',
+            'label' => 'Admin',
+        ]);
+
+        App\Permission::create([
+	    	'name' => 'reports', 
+            'label' => 'Reports',
         ]);
 
         $companyCategory = App\CompanyCategory::create([
@@ -53,6 +58,6 @@ class UsersTableSeeder extends Seeder
             'mobile_id' => 'ER42455634ERDSE',
         ]);
 
-        $user->givePermissionTo($permission);
+        $user->permissions()->attach([1, 2]);
     }
 }
