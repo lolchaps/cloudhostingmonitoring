@@ -146,7 +146,7 @@
                         </td>
                     </tr>
 
-                    <tr>
+                    {{-- <tr>
                         <th>My Account</th>
                         <td>
                             @if ($user->permissions->contains('name', 'my_account'))
@@ -155,7 +155,7 @@
                                 <span class="text-danger">Off</span>
                             @endif
                         </td>
-                    </tr>
+                    </tr> --}}
 
                     <tr>
                         <th>Projects</th>
