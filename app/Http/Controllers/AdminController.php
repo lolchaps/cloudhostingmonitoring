@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class AdminController extends Controller
 {
     /**
      * Show the application dashboard.
@@ -13,6 +14,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $users = User::with('department.company')->get();
+
+        return view('admin', ['users' => $users]);
     }
 }

@@ -44,6 +44,8 @@
                         <!-- Authentication Links -->
                         @if (Auth::check())
                             <!-- Simulate various abilities. -->
+                            <li><a href="{{ route('home') }}">Home</a></li>
+
                             @can('admin')
                                 <li><a href="{{ route('admin') }}">Admin</a></li>
                             @endcan
