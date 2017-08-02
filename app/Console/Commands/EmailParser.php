@@ -52,7 +52,5 @@ class EmailParser extends Command
         $email->html = $parser->getMessageBody('html');
         $email->headers = serialize($parser->getHeaders());
         $email->save();
-
-        $this->info('Test');
     }
 }
