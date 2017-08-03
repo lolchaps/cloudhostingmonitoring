@@ -49,25 +49,23 @@
                 <thead>
                     <tr>
                         <th>From Address</th>
-                        <th>Server IP</th>
-                        <th>Server Hostname</th>
+                        <th>To Address</th>
                         <th>Subject</th>
                         <th>Email Header</th>
                         <th>Email Body</th>
-                        <th>Complete Email</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    @foreach ($reports as $report)
+                        <tr>
+                            <td>{{ $report->from }}</td>
+                            <td>{{ $report->to }}</td>
+                            <td>{{ $report->subject }}</td>
+                            <td>{{ $report->headers }}</td>
+                            <td>{{ $report->text }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
